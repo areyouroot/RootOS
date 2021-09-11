@@ -7,6 +7,7 @@ this is just a script that can be used to change your arch Linux into user frien
 this is a opensource script that allows the user friendly experience enables auto updates every time your restart your machine and this script is mostly recommended for Linux beginners
 using this can allows you to do almost everything  that windows 11 can.
 You can customize the scripts to add the new features like HDR etc.
+## what does it contain
 ## How to use it and install it
 ## this script was done by Mr. A Abdul Faheem
 
