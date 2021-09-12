@@ -35,7 +35,7 @@ pacman -Fyy
 pacman -S reflector
 cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.bak  #copy the required files
 reflector -c "US" -f 12 -l 10 -n 12 --save /etc/pacman.d/mirrorlist
-pacstrap /mnt base linux linux-firmware xorg sddm plasma kde-applications sudo nano #installing the nessary stuff in /dev/sda where you are going to install arch linux
+pacstrap /mnt base linux linux-firmware xorg sddm plasma kde-applications sudo nano git #installing the nessary stuff in /dev/sda where you are going to install arch linux
 genfstab -U /mnt >> /mnt/etc/fstab
 echo -e "\n\nenter the new user name : " #creating a desktop user
 read new_user
