@@ -6,7 +6,7 @@
 echo -e "run as root\nrun this script after installing the arch linux \n\ntype 'yes' and enter to continue else ctrl+c"
 read ans
 sudo touch a
-sudo echo -e "[multilib]\nInclude = /etc/pacman.d/mirrorlist\n[core]\nInclude = /etc/pacman.d/mirrorlist\n[extra]\nInclude = /etc/pacman.d/mirrorlist\n[community]\nInclude = /etc/pacman.d/mirrorlist\n" >> etc/pacman.conf
+sudo echo -e "[multilib]\nInclude = /etc/pacman.d/mirrorlist\n[core]\nInclude = /etc/pacman.d/mirrorlist\n[extra]\nInclude = /etc/pacman.d/mirrorlist\n[community]\nInclude = /etc/pacman.d/mirrorlist\n" >> /etc/pacman.conf
 sudo echo -e "nameserver 1.1.1.1\nnameserver 1.0.0.1" > /etc/resolv.conf
 sudo pacman -Fyy
 sudo pacman -Syyu
