@@ -53,7 +53,7 @@ arch-chroot /mnt grub-mkconfig -o /boot/grub/grub.cfg
 sed '/root ALL=(ALL) ALL/s/$/ \n'$new_user'ALL=(ALL) ALL\n&/' /mnt/etc/sudoers >> /mnt/etc/sudoers #enabling the nessary things
 arch-chroot /mnt systemctl enable sddm
 arch-chroot /mnt systemctl enable NetworkManager
-sed '/Current=/s/$/ \nbreeze\n&/' /mnt/usr/lib/sddm/sddm.conf.d/default.conf > /mnt/usr/lib/sddm/sddm.conf.d/default.conf
+sed '/Current=/s/$/ \nbreeze\n&/' /mnt/usr/lib/sddm/sddm.conf.d/default.conf >> /mnt/usr/lib/sddm/sddm.conf.d/default.conf
 echo -e "\n\nyour os has been installed you can reboot now\nthen boot into the existing os"
 
 #sucess

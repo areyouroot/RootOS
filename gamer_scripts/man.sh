@@ -3,8 +3,9 @@
 #common
 
 #change dns
-echo -e "run this script after installing the ach linux \n\ntype 'yes' and enter to continue else ctrl+c"
+echo -e "run this script after installing the arch linux \n\ntype 'yes' and enter to continue else ctrl+c"
 read ans
+sudo touch a
 sudo echo -e "nameserver 1.1.1.1\nnameserver 1.0.0.1" > /etc/resolv.conf
 sudo pacman -Fyy
 sudo pacman -Syyu
@@ -13,7 +14,7 @@ sudo systemctl enable bluetooth
 echo "/usr/local/bin/fish" >> /etc/shells
 chsh -s /usr/local/bin/fish
 sudo systemctl enable org.cups.cupsd
-
+rm -r a
 #man enabling games
 
 echo "lets begin the real game"
@@ -21,5 +22,7 @@ echo "lets begin the real game"
 sudo pacman -Syy steam wine lutris
 
 #common
+echo -e "now the systerm is going to reboot \n\ntype 'yes' and enter to continue else ctrl+c"
+read ans 
 
 reboot
