@@ -8,6 +8,13 @@ this is a opensource script that allows the user friendly experience enables aut
 using this can allows you to do almost everything  that windows 11 can.
 You can customize the scripts to add the new features like HDR etc.
 ## what does it contain
+kde plasma 
+fish
+stream 
+wine etc
+and all black arch hacking tools
+it has dpkg so u can install .deb files
 ## How to use it and install it
+
 ## this script was done by Mr. A Abdul Faheem
 
