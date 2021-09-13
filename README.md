@@ -9,12 +9,11 @@ using this can allows you to do almost everything  that windows 11 can.
 You can customize the scripts to add the new features like HDR etc.
 ## what does it contain
 kde plasma 
-fish
 stream 
 wine etc
 and all black arch hacking tools
 it has dpkg so u can install .deb files
 ## How to use it and install it
-
+https://youtu.be/6_fCYCxcfOw
 ## this script was done by Mr. A Abdul Faheem
 
