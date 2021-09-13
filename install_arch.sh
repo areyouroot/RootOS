@@ -50,7 +50,7 @@ arch-chroot /mnt pacman -Syy grub os-prober
 arch-chroot /mnt grub-install $disk #installing grub so that we can enable from boot
 arch-chroot /mnt grub-mkconfig -o /boot/grub/grub.cfg
 
-sed '/root ALL=(ALL) ALL/s/$/ \n'$new_user'ALL=(ALL) ALL\n&/' /mnt/etc/sudoers >> /mnt/etc/sudoers #enabling the nessary things
+sed '/root ALL=(ALL) ALL/s/$/ \n'$new_user' ALL=(ALL) ALL\n&/' /mnt/etc/sudoers >> /mnt/etc/sudoers #enabling the nessary things
 arch-chroot /mnt systemctl enable sddm
 arch-chroot /mnt systemctl enable NetworkManager
 sed '/Current=/s/$/ \nbreeze\n&/' /mnt/usr/lib/sddm/sddm.conf.d/default.conf >> /mnt/usr/lib/sddm/sddm.conf.d/default.conf
