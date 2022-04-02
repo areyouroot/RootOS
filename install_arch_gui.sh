@@ -56,7 +56,7 @@ arch-chroot /mnt echo -e "LANG=en-US.UTF-8" > /etc/locale.conf
 arch-chroot /mnt grub-install --target=x86_64-efi --efi-directory=/boot/efi
 arch-chroot /mnt grub-mkconfig -o /boot/grub/grub.cfg
 arch-chroot /mnt git clone https://github.com/areyouroot/root_os_arch-script.git
-arch-chroot /mnt ./root_os.sh
+arch-chroot /mnt bash -e /root_os_arch-script/root_os.sh
 
 sed '/root ALL=(ALL) ALL/s/$/ \n'$new_user' ALL=(ALL) ALL\n&/' /mnt/etc/sudoers >> /mnt/etc/sudoers #enabling the nessary things
 
