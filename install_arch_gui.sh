@@ -55,6 +55,11 @@ arch-chroot /mnt echo -e "LANG=en-US.UTF-8" > /etc/locale.conf
 
 arch-chroot /mnt grub-install --target=x86_64-efi --efi-directory=/boot/efi
 arch-chroot /mnt grub-mkconfig -o /boot/grub/grub.cfg
+arch-chroot /mnt pacman -Syyu
+arch-chroot /mnt pacman -Fyy
+arch-chroot /mnt pacman yay xorg plasma-meta kde-applications
+arch-chroot /mnt systemctl enable sddm
+
 
 sed '/root ALL=(ALL) ALL/s/$/ \n'$new_user' ALL=(ALL) ALL\n&/' /mnt/etc/sudoers >> /mnt/etc/sudoers #enabling the nessary things
 
