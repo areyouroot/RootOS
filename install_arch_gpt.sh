@@ -12,24 +12,25 @@ fdisk -l
 echo -e "\n \nenter your disk to be selected  "
 read disk
 clear
-echo -e "\n\nnow u need to manually partition your disk \n enter any thing and press enter to continue use dos mode \n instructions for dos mod select dos mod \n select free space the select new type partiton size \n create 2 partion one is 512m for boot and another is for ur main \n select primary select 512m bootable select write \n then select quit"
+echo -e "\n\nnow u need to manually partition your disk \n enter any thing and press enter to continue use gpt mode \n instructions for gpt mod select gpt mod \n select free space the select new type partiton size \n create 2 partion one is 550m for efi systerm then goto type and change to efi system and another is for ur main \n then select write then type yes then select quit"
 read verify
 cfdisk $disk #creating a disk partition
 clear
-mkfs.ext4 $disk"1"
+lsblk
+mkfs.fat -F32 $disk"1"
 mkfs.ext4 $disk"2"
 mount $disk"2" /mnt  #mounting the ur disk
 mkdir /mnt/boot
-mount $disk"1" /mnt/boot
+mkdir /mnt/boot/efi
+mount $disk"1" /mnt/boot/efi
 pacman -Syy #updating and pacman and installing things temporvary in archlive os
 pacman -Fyy
 pacstrap /mnt base base-devel linux linux-firmware #installing the nessary stuff in /dev/sda where you are going to install arch linux
 genfstab -U /mnt >> /mnt/etc/fstab
 genfstab -U /mnt
-arch-chroot /mnt pacman -S networkmanager grub neofetch
+arch-chroot /mnt pacman -S networkmanager grub neofetch efibootmgr
 arch-chroot /mnt systemctl enable NetworkManager
-arch-chroot /mnt grub-install $disk
-arch-chroot /mnt grub-mkconfig -o /boot/grub/grub.cfg
+
 clear
 
 echo -e "\n\nenter the new user name : " #creating a desktop user
@@ -52,7 +53,8 @@ arch-chroot /mnt locale-gen
 
 arch-chroot /mnt echo -e "LANG=en-US.UTF-8" > /etc/locale.conf
 
-
+arch-chroot /mnt grub-install --target=x86_64-efi --efi-directory=/boot/efi
+arch-chroot /mnt grub-mkconfig -o /boot/grub/grub.cfg
 
 sed '/root ALL=(ALL) ALL/s/$/ \n'$new_user' ALL=(ALL) ALL\n&/' /mnt/etc/sudoers >> /mnt/etc/sudoers #enabling the nessary things
 
