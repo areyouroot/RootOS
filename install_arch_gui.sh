@@ -62,6 +62,23 @@ sed '/root ALL=(ALL) ALL/s/$/ \n'$new_user' ALL=(ALL) ALL\n&/' /mnt/etc/sudoers 
 
 clear
 
+echo -e "\n do u want gaming script to be installed ?(yes/no)"
+read verify
+
+if [ "$verify" == "yes" ] || [ "$verify" == "y" ] || [ "$verify" == "Y"] || [ "$verify" == "YES" ]
+then
+    arch-chroot /mnt bash -e /root_os_arch-script/game.sh
+fi
+
+echo -e "\n do u want hacking script to be installed ?(yes/no)"
+read verify
+
+if [ "$verify" == "yes" ] || [ "$verify" == "y" ] || [ "$verify" == "Y"] || [ "$verify" == "YES" ]
+then
+    arch-chroot /mnt bash -e /root_os_arch-script/hack.sh
+fi
+
+
 echo -e "\n\nyour os has been installed you can reboot now\nthen boot into the existing os\n now reboot thanks for using this script please support us\n su root"
 
 #sucess
