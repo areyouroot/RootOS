@@ -30,9 +30,6 @@ sudo pacman -Syy bluez bluez-utils cups xf86-video-intel xf86-video-amdgpu nvidi
 sudo systemctl enable bluetooth
 sudo systemctl enable org.cups.cupsd
 rm -r a
-which $SHELL
-sudo pacman -S zsh zsh-completions zsh-syntax-highlighting arcolinux-zsh-git oh-my-zsh-git
-zsh /usr/share/zsh/functions/Newuser/zsh-newuser-install -f
 
 echo -e "\n do u want gaming script to be installed ?(yes/no)"
 read verify
