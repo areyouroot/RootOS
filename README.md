@@ -16,7 +16,12 @@ and all black arch hacking tools
 it has dpkg so u can install .deb files
 ## How to use it and install it
 
-
+https://www.youtube.com/watch?v=nNwBzjIfCWY
 
 ## this script was done by Mr. A Abdul Faheem
+
+you can find the script from 
+https://github.com/areyouroot/root_os_arch-script
+arch os link
+https://archlinux.org/download/
 
